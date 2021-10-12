@@ -10,6 +10,5 @@ public class Registration {
         System.out.println("Please give me your e-mail address and money");
         String email = scann.nextLine();
         System.out.println("This is your name: " + name + " and this is your e-mail address: " + email + " ( and here is the money! :) )");
-
     }
 }

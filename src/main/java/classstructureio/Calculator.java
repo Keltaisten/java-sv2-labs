@@ -10,6 +10,5 @@ public class Calculator {
         int secondNumb = scann.nextInt();
         System.out.println(firstNumb + " + " + secondNumb);
         System.out.println(firstNumb + secondNumb);
-
     }
 }
