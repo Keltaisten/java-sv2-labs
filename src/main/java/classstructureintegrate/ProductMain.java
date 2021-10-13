@@ -21,7 +21,6 @@ public class ProductMain {
         product.decreasePrice(500);
 
         System.out.println("A darab ára csökkent: " + product.getPrice() + "Ft");
-
     }
 
 }
