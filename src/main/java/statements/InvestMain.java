@@ -6,7 +6,7 @@ public class InvestMain {
     public static void main(String[] args) {
         int fund;
         int interestRate;
-        double days;
+        int days;
 
         Scanner scann = new Scanner(System.in);
 
@@ -21,8 +21,8 @@ public class InvestMain {
         System.out.println("Kérem adja meg hány napra szeretné tudni a hozamot");
         days = scann.nextInt();
         System.out.println("Az ön hozama ha " + days + " nap után veszi ki a pénzét: " + investment.getYield(days));
-        System.out.println("Ön 80 nap után vette ki a befektetését ennek összege: " + investment.close(80.0));
-        System.out.println("A befektetés 90 nap után: " + investment.close(90.0));
+        System.out.println("Ön 80 nap után vette ki a befektetését ennek összege: " + investment.close(80));
+        System.out.println("A befektetés 90 nap után: " + investment.close(90));
 
     }
 }
