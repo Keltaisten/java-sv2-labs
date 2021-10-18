@@ -27,49 +27,51 @@ public class BootRental {
     }
 
     public static void numbers(int numb){
-        int boat5 = 0;
-        int boat3 = 0;
-        int boat2 = 0;
+        boolean boat5 = false;
+        boolean boat3 = false;
+        boolean boat2 = false;
         int remain = 10;
+        int originalNumber = numb;
 
         if(numb>5){
             numb -= 5;
             remain -=5;
-            boat5 = 1;
+            boat5 = true;
             if(numb/3 > 0){
                 numb -= 3;
                 remain -=3;
-                boat3= 1;
+                boat3= true;
             }
 
             if(numb > 0){
                 numb -= 2;
                 remain -= 2;
-                boat2 = 1;
+                boat2 = true;
             }
         }
         else{
             if(numb/4 > 0){
                 numb -= 5;
                 remain -=5;
-                boat5 = 1;
+                boat5 = true;
             }
 
             if(numb/3 > 0){
                 numb -= 3;
                 remain -=3;
-                boat3= 1;
+                boat3= true;
             }
 
             if(numb > 0){
                 numb -= 2;
                 remain -= 2;
-                boat2 = 1;
+                boat2 = true;
             }
         }
 
 
-        System.out.println("5 személyes : " + boat5 + ", 3 személyes :" + boat3 + ", 2 személyes: " + boat2
+        System.out.println("Csapat létszáma: " + originalNumber + ", 5 személyes : " + boat5 +
+                ", 3 személyes :" + boat3 + ", 2 személyes: " + boat2
                 + ", Férőhely maradt: " + remain);
     }
 
