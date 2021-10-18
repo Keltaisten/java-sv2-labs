@@ -6,6 +6,44 @@ public class BootRental {
     public static void main(String[] args) {
         int number;
 
+        Scanner scann = new Scanner(System.in);
+
+        System.out.println("Kérem adja meg hányan vennék igénybe a kölcsönzést");
+        //number = scann.nextInt();
+        number = 5;
+        if (number <= 2) {
+            System.out.println(number + " vitték el.");
+            System.out.println(10 - number + " fő mehet még utánuk.");
+        } else {
+            if (number == 3) {
+                System.out.println(number + " vitték el.");
+                System.out.println(10- number + " fő mehet még utánuk.");
+            } else {
+                if (number <= 5) {
+                    System.out.println(number + " vitték el.");
+                    System.out.println(10 - number +" fő mehet még utánuk.");
+                } else {
+                    if (number <= 7) {
+                        System.out.println(number + " vitték el.");
+                        System.out.println(10 - number + " fő mehet még utánuk.");
+                    } else {
+                        if (number <= 8) {
+                            System.out.println(number + " vitték el.");
+                            System.out.println(10 - number +" fő mehet még utánuk.");
+                        }else {
+                            if (number <= 10) {
+                                System.out.println(number + " vitték el.");
+                                System.out.println(10 - number +" fő mehet még utánuk.");
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+
 
         numbers(1);
         numbers(2);
@@ -75,5 +113,8 @@ public class BootRental {
                 + ", Férőhely maradt: " + remain);
     }
 
+    public static void numbers2(int numb) {
+
+    }
 
 }
