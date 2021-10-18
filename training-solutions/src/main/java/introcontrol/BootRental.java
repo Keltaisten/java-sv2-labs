@@ -11,10 +11,10 @@ public class BootRental {
         System.out.println("Kérem adja meg hányan vennék igénybe a kölcsönzést");
         number = scann.nextInt();
 
-        numbers(number);
+        headCount(number);
     }
 
-    public static void numbers(int numb){
+    public static void headCount(int numb){
         String taken = "Az elvitt csónak/csónakok: ";
         int remain = 10;
         String place;
