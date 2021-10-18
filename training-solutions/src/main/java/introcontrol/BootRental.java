@@ -7,7 +7,17 @@ public class BootRental {
         int number;
 
 
+        numbers(1);
+        numbers(2);
+        numbers(3);
         numbers(4);
+        numbers(5);
+        numbers(6);
+        numbers(7);
+        numbers(8);
+        numbers(9);
+        numbers(10);
+
     }
 
 
@@ -22,22 +32,40 @@ public class BootRental {
         int boat2 = 0;
         int remain = 10;
 
-        if(numb/5 > 0){
+        if(numb>5){
             numb -= 5;
             remain -=5;
             boat5 = 1;
-        }
+            if(numb/3 > 0){
+                numb -= 3;
+                remain -=3;
+                boat3= 1;
+            }
 
-        if(numb/3 > 0){
-            numb -= 3;
-            remain -=3;
-            boat3= 1;
+            if(numb > 0){
+                numb -= 2;
+                remain -= 2;
+                boat2 = 1;
+            }
         }
+        else{
+            if(numb/4 > 0){
+                numb -= 5;
+                remain -=5;
+                boat5 = 1;
+            }
 
-        if(numb > 0){
-            numb -= 2;
-            remain -= 2;
-            boat2 = 1;
+            if(numb/3 > 0){
+                numb -= 3;
+                remain -=3;
+                boat3= 1;
+            }
+
+            if(numb > 0){
+                numb -= 2;
+                remain -= 2;
+                boat2 = 1;
+            }
         }
 
 
