@@ -19,7 +19,7 @@ public class Freezer {
 
         freezerList.remove("Bolognai");
         freezerList.remove("Pörkölt");
-        
+
         System.out.println(freezerList.toString());
         System.out.println(freezerList.size());
     }
