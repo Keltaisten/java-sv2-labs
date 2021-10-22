@@ -20,7 +20,7 @@ public class LanguageSchool {
     study.add(student3);
 
     student3.setActive(false);
-    
+
     for(Student i: study){
         if(i.isActive() == true){
             block.add(i);
@@ -29,5 +29,4 @@ public class LanguageSchool {
         System.out.println(study.size());
         System.out.println(block.size());
     }
-
 }
