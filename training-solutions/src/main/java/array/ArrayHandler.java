@@ -4,7 +4,7 @@ public class ArrayHandler {
     public static void main(String[] args) {
         String indexNumbersConc = "";
         String indexWordsConc = "";
-        
+
         int[] indexNumbers = new int[4];
         indexNumbers[0] = 2;
         indexNumbers[1] = 5;
