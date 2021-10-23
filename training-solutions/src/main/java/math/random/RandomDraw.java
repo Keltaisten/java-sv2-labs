@@ -11,8 +11,8 @@ public class RandomDraw {
                 "Vali", "Holli", "Fiona", "Leona", "Imola"));
 
         Random rand = new Random();
-        int random1= rand.nextInt(1,5);
-        int random2= rand.nextInt(6,10);
+        int random1= rand.nextInt(0,4);
+        int random2= rand.nextInt(5,9);
 
         System.out.println("Az első nyertesünk: " + members.get(random1));
         System.out.println("A második nyertes: " + members.get(random2));
