@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Registration {
-    
+
     public static void main(String[] args) {
         String surName;
         String firstName;
