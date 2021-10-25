@@ -45,7 +45,6 @@ public class Task {
         task.setDuration(LocalTime.of(12,00));
         System.out.println("Jegyzet készült: " + task.getStartDateTime());
         System.out.println("Feladat neve: " + task.getTitle() + ", Leírása: " + task.getDescription());
-
         System.out.println("Megadott idő: " + task.getDuration());
     }
 }
