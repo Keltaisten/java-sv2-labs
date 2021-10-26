@@ -28,6 +28,6 @@ public class ReferencesMain {
 
         System.out.println(person1);
         System.out.println(person2);
-        
+
     }
 }
