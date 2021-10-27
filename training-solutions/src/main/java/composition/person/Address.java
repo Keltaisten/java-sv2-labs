@@ -24,7 +24,6 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-
     public String getCountry() {
         return country;
     }

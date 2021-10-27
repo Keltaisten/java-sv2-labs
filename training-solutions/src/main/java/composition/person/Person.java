@@ -6,7 +6,7 @@ public class Person {
     private Address address;
 
     public String personToString(){
-        return name + identificationCard;
+        return name + ", " + identificationCard;
     }
 
     public Person(String name, String identificationCard) {
