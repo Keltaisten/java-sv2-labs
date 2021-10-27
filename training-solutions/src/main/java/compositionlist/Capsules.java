@@ -31,7 +31,12 @@ public class Capsules {
         Capsules capsules = new Capsules();
         capsules.addLast("ot");
         capsules.addFirst("negy");
-        capsules.addFirst("ketto");
         capsules.addLast("harom");
+        capsules.addFirst("ketto");
+        System.out.println(capsules.getColors());
+        capsules.removeFirst();
+        System.out.println(capsules.getColors());
+        capsules.removeLast();
+        System.out.println(capsules.getColors());
     }
 }
