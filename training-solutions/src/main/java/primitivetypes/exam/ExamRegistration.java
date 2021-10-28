@@ -27,7 +27,6 @@ public class ExamRegistration {
     }
 
     public LocalDate transformDate(String dateOfBirth){
-//        1990.36.16.
         int year = Integer.parseInt(dateOfBirth.substring(0,4));
         int month = Integer.parseInt(dateOfBirth.substring(5,7));
         int day = Integer.parseInt(dateOfBirth.substring(8,10));
