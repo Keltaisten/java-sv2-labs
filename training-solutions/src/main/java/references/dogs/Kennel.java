@@ -10,7 +10,7 @@ public class Kennel {
         Dog dog2 = new Dog("Pacsi", 2,"fekete");
         dogs.add(dog1);
         dogs.add(dog2);
-        
+
 
     }
 }
