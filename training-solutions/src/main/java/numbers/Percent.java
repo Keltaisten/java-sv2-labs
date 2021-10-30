@@ -30,11 +30,11 @@ public class Percent {
         percentOfNumber = scanner.nextInt();
         System.out.println("Kérem adjon meg mégegy számot:");
         percent = scanner.nextInt();
-        System.out.println("Az első szám minek a második szám szerinti százaléka: " + per.getBase(percentOfNumber,percent));
+        System.out.println("Az első szám ennek a második szám szerinti százaléka: " + per.getBase(percentOfNumber,percent));
         System.out.println("Kérem adjon meg egy számot:");
-        percentOfNumber = scanner.nextInt();
+        number = scanner.nextInt();
         System.out.println("Kérem adjon meg mégegy számot:");
-        percent = scanner.nextInt();
-        System.out.println(per.getPercent(200,60));
+        percentOfNumber = scanner.nextInt();
+        System.out.println("Az elsőnek ennyi százaléka a második: " + per.getPercent(number,percentOfNumber));
     }
 }
