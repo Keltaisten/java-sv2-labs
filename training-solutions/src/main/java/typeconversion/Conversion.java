@@ -21,4 +21,12 @@ public class Conversion {
             }
             return arrayByte;
         }
+
+        public double getFirstDecimal(double number){
+            int wholeNumber = (int) number;
+            double fraction = number - wholeNumber;
+            fraction *= 10;
+            int fractionToWhole = (int) fraction;
+            return wholeNumber + (fractionToWhole/10.0);
+        }
 }
