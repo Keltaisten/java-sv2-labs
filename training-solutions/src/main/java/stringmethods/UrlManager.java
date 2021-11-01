@@ -10,15 +10,17 @@ public class UrlManager {
     private String query;
 
     public UrlManager(String url){
-        url = url.trim();
-        protocolFromUrl(url);
-        hostFromUrl(url);
-        portFromUrl(url);
+        String urlCut = url.trim();
+//        url = url.trim();
+        protocolFromUrl(urlCut);
+//        hostFromUrl(url);
+//        portFromUrl(url);
     }
 
     public void protocolFromUrl(String url){
         protocol = url.substring(0,url.indexOf(':')).toLowerCase();
-        url = url.substring(url.indexOf("://") +3);
+        hostFromUrl(url.substring(url.indexOf("://") +3));
+//        url = url.substring(url.indexOf("://") +3);
     }
 
 //    public void hostFromUrl(String url){
@@ -26,14 +28,38 @@ public class UrlManager {
 //        url = url.substring(url.indexOf(":") +1);
 //    }
 
+//    public void hostFromUrl(String url){
+//        if (url.contains("/")) {
+//        host = url.substring(0,url.indexOf('/')).toLowerCase();
+//        portFromUrl(url.substring(url.indexOf("/") +1));
+//
+////        url = url.substring(url.indexOf("/") +1);
+//
+//        }else{
+//            host = url.toLowerCase();
+//            url = "";
+//        }
+//    }
+
     public void hostFromUrl(String url){
         if (url.contains("/")) {
-        host = url.substring(0,url.indexOf('/')).toLowerCase();
-        url = url.substring(url.indexOf("/") +1);
+            if (url.contains(":")) {
+            host = url.substring(0,url.indexOf(':')).toLowerCase();
+            port = Integer.parseInt(url.substring(url.indexOf(':')+1,url.indexOf('/')));
+
+//        url = url.substring(url.indexOf("/") +1);
+        }else {
+                host = url.substring(0,url.indexOf('/')).toLowerCase();
+                port = null;
+            }
+            url = url.substring(url.indexOf("/") +1);
+//            pathFromUrl(url.substring(url.indexOf("/") +1));
         }else{
             host = url.toLowerCase();
+            port = null;
             url = "";
         }
+        pathFromUrl(url);
     }
 
 //    public void portFromUrl(String url){
@@ -44,23 +70,27 @@ public class UrlManager {
     public void portFromUrl(String url){
         if(host.contains(":")) {
             port = Integer.parseInt(host.substring(url.indexOf(':')+1));
+        }else{
+            port = null;
         }
     }
-    
+
     public void pathFromUrl(String url){
         if(!url.equals("")) {
             path = url.substring(0, url.indexOf('?'));
             url = url.substring(url.indexOf("?") + 1);
         }else{
-            path = "";
+            path = "not defined";
+            url = "";
         }
+        queryFromUrl(url);
     }
 
     public void queryFromUrl(String url){
         if(!url.equals("")) {
             query = url;
         }else{
-            query = "";
+            query = "not defined";
         }
     }
 
@@ -91,6 +121,34 @@ public class UrlManager {
 
     public String getPath() {
         return path;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public static void main(String[] args) {
+        UrlManager urlM = new UrlManager("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02");
+        System.out.println("Protocol: " + urlM.getProtocol());
+        System.out.println("Host: " + urlM.getHost());
+        System.out.println("Portal: " + urlM.getPort());
+        System.out.println("Path: " + urlM.getPath());
+        System.out.println("Query: " + urlM.getQuery());
+        UrlManager urlM2 = new UrlManager("https://earthquake.usgs.gov:100/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02");
+        System.out.println("Protocol: " + urlM2.getProtocol());
+        System.out.println("Host: " + urlM2.getHost());
+        System.out.println("Portal: " + urlM2.getPort());
+        System.out.println("Path: " + urlM2.getPath());
+        System.out.println("Query: " + urlM2.getQuery());
+        UrlManager urlM3 = new UrlManager("https://earthquake.usgs.gov:100");
+        System.out.println("Protocol: " + urlM3.getProtocol());
+        System.out.println("Host: " + urlM3.getHost());
+        System.out.println("Portal: " + urlM3.getPort());
+        System.out.println("Path: " + urlM3.getPath());
+        System.out.println("Query: " + urlM3.getQuery());
+
+        System.out.println(urlM.hasProperty("date"));
+        System.out.println(urlM.getProperty("format"));
     }
 
 }
