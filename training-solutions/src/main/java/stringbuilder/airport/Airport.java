@@ -35,6 +35,4 @@ public class Airport {
 
         System.out.println(airport.getDeletedFlights().toString());
     }
-
-
 }
