@@ -1,7 +1,5 @@
 package stringmethods;
 
-import java.util.Locale;
-
 public class UrlManager {
     private String protocol;
     private String host;
@@ -11,68 +9,30 @@ public class UrlManager {
 
     public UrlManager(String url){
         String urlCut = url.trim();
-//        url = url.trim();
         protocolFromUrl(urlCut);
-//        hostFromUrl(url);
-//        portFromUrl(url);
     }
 
     public void protocolFromUrl(String url){
         protocol = url.substring(0,url.indexOf(':')).toLowerCase();
         hostFromUrl(url.substring(url.indexOf("://") +3));
-//        url = url.substring(url.indexOf("://") +3);
     }
-
-//    public void hostFromUrl(String url){
-//        host = url.substring(0,url.indexOf(':')).toLowerCase();
-//        url = url.substring(url.indexOf(":") +1);
-//    }
-
-//    public void hostFromUrl(String url){
-//        if (url.contains("/")) {
-//        host = url.substring(0,url.indexOf('/')).toLowerCase();
-//        portFromUrl(url.substring(url.indexOf("/") +1));
-//
-////        url = url.substring(url.indexOf("/") +1);
-//
-//        }else{
-//            host = url.toLowerCase();
-//            url = "";
-//        }
-//    }
 
     public void hostFromUrl(String url){
         if (url.contains("/")) {
             if (url.contains(":")) {
             host = url.substring(0,url.indexOf(':')).toLowerCase();
             port = Integer.parseInt(url.substring(url.indexOf(':')+1,url.indexOf('/')));
-
-//        url = url.substring(url.indexOf("/") +1);
         }else {
                 host = url.substring(0,url.indexOf('/')).toLowerCase();
                 port = null;
             }
             url = url.substring(url.indexOf("/") +1);
-//            pathFromUrl(url.substring(url.indexOf("/") +1));
         }else{
             host = url.toLowerCase();
             port = null;
             url = "";
         }
         pathFromUrl(url);
-    }
-
-//    public void portFromUrl(String url){
-//        port = Integer.parseInt(url.substring(0,url.indexOf('/')));
-//        url = url.substring(url.indexOf("/") +1);
-//    }
-
-    public void portFromUrl(String url){
-        if(host.contains(":")) {
-            port = Integer.parseInt(host.substring(url.indexOf(':')+1));
-        }else{
-            port = null;
-        }
     }
 
     public void pathFromUrl(String url){
