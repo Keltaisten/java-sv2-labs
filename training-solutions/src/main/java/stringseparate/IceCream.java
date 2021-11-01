@@ -6,10 +6,7 @@ import java.util.List;
 
 public class IceCream {
 
-
-
-    public static void main(String[] args) {
-        List<String> arrayS = new ArrayList<>(Arrays.asList("csoki", "vanilia", "puncs", "pisztácia"));
+    public StringBuilder addElements(List<String> arrayS){
         StringBuilder strB = new StringBuilder();
         strB.append("Ma kapható: ");
         boolean bool = true;
@@ -21,9 +18,13 @@ public class IceCream {
             }
             strB.append(s);
         }
-
         strB.append(".\nMa féláron kapható a pisztácia.");
+        return strB;
+    }
 
-        System.out.println(strB.toString());
+    public static void main(String[] args) {
+        IceCream iceCream = new IceCream();
+        List<String> arrayS = new ArrayList<>(Arrays.asList("csoki", "vanilia", "puncs", "pisztácia"));
+        System.out.println(iceCream.addElements(arrayS).toString());
     }
 }
