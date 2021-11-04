@@ -18,7 +18,22 @@ public class Division {
             numberOfLoops++;
             numberDividers = numberFromUser * numberOfLoops;
         }
+        return stringNumbers;
+    }
 
+    public StringBuilder divideNumbersFor(int numbMaximum, int numberFromUser){
+        StringBuilder stringNumbers = new StringBuilder();
+        int numberDividers = numberFromUser;
+        boolean bool = true;
+        for(int i = 2; numberDividers<numbMaximum; i++){
+            if(bool){
+                bool = false;
+            }else {
+                stringNumbers.append(", ");
+            }
+            stringNumbers.append(numberDividers);
+            numberDividers = numberFromUser * i;
+        }
         return stringNumbers;
     }
 
@@ -30,5 +45,6 @@ public class Division {
         System.out.println("Hánnyal osztható számokat szeretne kapni?");
         int numbDivider = scanner.nextInt();
         System.out.println(division.divideNumbers(numbMaximum, numbDivider));
+        System.out.println(division.divideNumbersFor(numbMaximum, numbDivider));
     }
 }
