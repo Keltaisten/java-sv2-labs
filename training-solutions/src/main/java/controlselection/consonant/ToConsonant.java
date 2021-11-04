@@ -3,7 +3,7 @@ package controlselection.consonant;
 public class ToConsonant {
         public char whichCharacter(char charrr){
             char nextChar;
-            if(charrr<'z' && charrr>'a'){
+            if(charrr<='z' && charrr>='a'){
             switch(charrr){
                 case 'a':
                     nextChar = 'b';
