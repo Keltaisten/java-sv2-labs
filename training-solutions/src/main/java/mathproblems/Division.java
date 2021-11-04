@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Division {
     public void getDivisors(int number){
-        List<String> divirors = new ArrayList<>();
+        List<String> divisors = new ArrayList<>();
         int steps = 1;
-        divirors.add(0,(""));
+        divisors.add(0,(""));
         for(int i = 1; i <= number/i; i++){
             if(number%i == 0){
-                divirors.add((steps-1),("" + number + " osztója: " + i));
+                divisors.add((steps-1),("" + number + " osztója: " + i));
                 if(number/i != i){
-                    divirors.add(steps, ("" + number + " osztója: " + number / i));
+                    divisors.add(steps, ("" + number + " osztója: " + number / i));
                     steps++;
                 }
             }
         }
-        for(String elements:divirors){
+        for(String elements:divisors){
             System.out.println(elements);
         }
     }
@@ -32,7 +32,7 @@ public class Division {
     public void getRightNumbers(int[] numbers){
         for(int i = 0; i < numbers.length; i++){
             if(i != 0 && numbers[i]%i == 0){
-                System.out.print(i + " ");
+                System.out.print(numbers[i] + " ");
             }
         }
     }
