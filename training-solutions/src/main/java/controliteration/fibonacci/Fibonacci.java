@@ -64,7 +64,7 @@ public class Fibonacci {
 //        System.out.println(fibonacci.Fibo3(5));
 //        System.out.println(LocalTime.now());
         int numb = 5;
-        int[] lookup = new int[numb];
+        int[] lookup = new int[numb+1];
         lookup[0] = 0;
         lookup[1] = 1;
         for(int i = 2;i<lookup.length;i++){
