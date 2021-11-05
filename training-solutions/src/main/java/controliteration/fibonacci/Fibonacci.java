@@ -8,8 +8,10 @@ import java.util.List;
 public class Fibonacci {
 
     List<Long> memoList = new ArrayList<>();
+    long[] lookup;
 
-    public List<Long> Fibo(int numb){
+//    Original algorithm
+    public List<Long> fibo(int numb){
         long fistN = 0;
         long secondN = 1;
         long thirdN;
@@ -23,16 +25,16 @@ public class Fibonacci {
         }
         return listN;
     }
-
-    public long Fibo2(int numb){
+//    Recursive without memoization
+    public long fibo2(int numb){
         Fibonacci fibonacci = new Fibonacci();
         if(numb<=2){
             return 1;
         }else{
-            return fibonacci.Fibo2(numb-1) + fibonacci.Fibo2(numb-2);
+            return fibonacci.fibo2(numb-1) + fibonacci.fibo2(numb-2);
         }
     }
-
+//    Not yet finished
     public long Fibo3(int numb){
         Fibonacci fibonacci = new Fibonacci();
         List<Long> numberList = new ArrayList<>();
@@ -48,40 +50,27 @@ public class Fibonacci {
             return memoList.get(numb);
         }
     }
+//    public void makeMemoList(int numb){
+//        for(int i = 0;i<numb;i++){
+//            memoList.add((long) 0);
+//        }
+//    }
 
     public static void main(String[] args) {
         Fibonacci fibonacci = new Fibonacci();
-//        fibonacci.makeMemoList(6);
-//        fibonacci.memoList.add((long) 0);
-//        System.out.println();
-//        System.out.println(fibonacci.Fibo(5));
-//        System.out.println(fibonacci.Fibo2(5));
-//        System.out.println(LocalTime.now());
-////        System.out.println(fibonacci.Fibo2(50));
-//        System.out.println(LocalTime.now());
-//        System.out.println(fibonacci.Fibo(70).get(69));
-//        System.out.println(LocalTime.now());
-//        System.out.println(fibonacci.Fibo3(5));
-//        System.out.println(LocalTime.now());
-        int numb = 5;
-        int[] lookup = new int[numb+1];
-        lookup[0] = 0;
-        lookup[1] = 1;
-        for(int i = 2;i<lookup.length;i++){
-            lookup[i] = -1;
-        }
-
-        System.out.println(fibonacci.fibo4(lookup,numb));
-        System.out.println(Arrays.toString(lookup));
+        int number = 40;
+        System.out.println(LocalTime.now());
+        System.out.println(fibonacci.fibo(number).get(number-1));
+        System.out.println(LocalTime.now());
+        System.out.println(fibonacci.fibo2(number));
+        System.out.println(LocalTime.now());
+        System.out.println(fibonacci.fibo4Start(number));
+        System.out.println(LocalTime.now());
     }
 
-    public void makeMemoList(int numb){
-        for(int i = 0;i<numb;i++){
-            memoList.add((long) 0);
-        }
-    }
 
-    public int fibo4(int lookup[], int number){
+//        Recursive with memoization
+    public long fibo4(long lookup[], int number){
         if(lookup[number] == -1){
             if(number==0){
                 return lookup[0];
@@ -94,5 +83,15 @@ public class Fibonacci {
             }
         }
         return lookup[number];
+    }
+
+    public long fibo4Start(int numb){
+        lookup = new long[numb+1];
+        lookup[0] = 0;
+        lookup[1] = 1;
+        for(int i = 2;i<lookup.length;i++){
+            lookup[i] = -1;
+        }
+        return fibo4(lookup,numb);
     }
 }
