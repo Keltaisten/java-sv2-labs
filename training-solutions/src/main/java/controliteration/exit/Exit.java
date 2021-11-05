@@ -7,7 +7,6 @@ public class Exit {
         Scanner scanner = new Scanner(System.in);
         do{
             System.out.println("Az ügyfélszolgálat menüje jelenleg nem elérhető. Kilépés: x billentyű megnyomásával");
-//            String s = scanner.nextLine();
-        }while("x".equals(scanner.nextLine().toLowerCase()));
+        }while(!"x".equalsIgnoreCase(scanner.nextLine()));
     }
 }
