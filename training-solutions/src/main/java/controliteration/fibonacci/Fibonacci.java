@@ -67,7 +67,16 @@ public class Fibonacci {
         System.out.println(fibonacci.fibo4Start(number));
         System.out.println(LocalTime.now());
     }
-
+//    Recursive with memoization, making array first
+    public long fibo4Start(int numb){
+        lookup = new long[numb+1];
+        lookup[0] = 0;
+        lookup[1] = 1;
+        for(int i = 2;i<lookup.length;i++){
+            lookup[i] = -1;
+        }
+        return fibo4(lookup,numb);
+    }
 
 //        Recursive with memoization
     public long fibo4(long lookup[], int number){
@@ -85,13 +94,4 @@ public class Fibonacci {
         return lookup[number];
     }
 
-    public long fibo4Start(int numb){
-        lookup = new long[numb+1];
-        lookup[0] = 0;
-        lookup[1] = 1;
-        for(int i = 2;i<lookup.length;i++){
-            lookup[i] = -1;
-        }
-        return fibo4(lookup,numb);
-    }
 }
