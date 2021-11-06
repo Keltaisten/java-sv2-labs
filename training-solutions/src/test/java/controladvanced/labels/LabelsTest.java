@@ -10,6 +10,5 @@ public class LabelsTest {
     @Test
     public void createTest(){
         assertEquals(0, new Labels().getTableOfNumbers(5)[3][3]);
-//        assertEquals(0, Arrays.deepToString(new Labels().getTableOfNumbers(5))[4][4]);
     }
 }
