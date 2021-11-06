@@ -8,7 +8,7 @@ public class ForbiddenSevens {
         System.out.println("Kérem adjon meg egy pozitív egész számot");
         Integer number = scanner.nextInt();
 
-        for(Integer i = number; i < 20;i++){
+        for(Integer i = number; i < 200;i++){
             Integer data = Integer.parseInt(String.valueOf(i.toString().toCharArray()[i.toString().toCharArray().length-1])) ;
 //            boolean bool = data == number;
             if(i %number == 0){
