@@ -13,7 +13,7 @@ public class Cinema {
         int numberOfTickets = scanner.nextInt();
         System.out.println("Melyik sorba szeretné a jegyeket?");
         int row = scanner.nextInt();
-        
+
         boolean bool = true;
         StringBuilder rowWithNumberOfChairs = new StringBuilder();
         for(int i = 1; i <=numberOfTickets; i++){

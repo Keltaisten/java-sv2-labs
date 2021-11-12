@@ -11,5 +11,14 @@ public class Message {
         for(String s: codedMessage){
             System.out.print(Character.toChars(Integer.parseInt(s)));   //Neked is!
         }
+
+        System.out.println();
+
+        List<String> anotherCodedMessage = Arrays.asList("69", "122", "32", "101", "103", "121",
+                "32", "104", "105", "98", "225", "115", "32", "252", "122", "101", "110", "101", "116", "46");
+
+        for(String s: anotherCodedMessage){
+            System.out.print(Character.toChars(Integer.parseInt(s)));
+        }
     }
 }
