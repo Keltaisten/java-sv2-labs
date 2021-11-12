@@ -13,6 +13,7 @@ public class Cinema {
         int numberOfTickets = scanner.nextInt();
         System.out.println("Melyik sorba szeretné a jegyeket?");
         int row = scanner.nextInt();
+        
         boolean bool = true;
         StringBuilder rowWithNumberOfChairs = new StringBuilder();
         for(int i = 1; i <=numberOfTickets; i++){
@@ -23,7 +24,6 @@ public class Cinema {
             }
             rowWithNumberOfChairs.append(row + ". sor " + i + ". szék");
         }
-
 
         System.out.println("A mozijegy.hu rendszerben vásárolt jegyek adatai a következők: \n" +
                 "Vásárló neve: " + name +
