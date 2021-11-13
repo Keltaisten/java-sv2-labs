@@ -9,7 +9,7 @@ public class FirstLetter {
     public void writeAllTheWords(){
         for(int i = 0; i <= words.size();i++){
             try {
-            System.out.println(words.get(i));
+            System.out.println(words.get(i).charAt(0));
             }
             catch (IndexOutOfBoundsException ioobe){
                 System.out.println(ioobe.getMessage());
