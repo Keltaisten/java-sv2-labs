@@ -12,10 +12,11 @@ public class Calculator {
 
         System.out.println("Adjon meg egy számot");
         try {
-        i = scanner.nextInt();
+            i = scanner.nextInt();
         }
         catch (InputMismatchException ime){
             System.out.println("Nem számot adott meg");
+            System.out.println("Az első szám értéke 0 lesz");
         }
         System.out.println("Adjon meg még egy számot");
         try {
@@ -23,10 +24,8 @@ public class Calculator {
         }
         catch (InputMismatchException ime){
             System.out.println("Nem számot adott meg");
+            System.out.println("A második szám értéke 0 lesz");
         }
-
-//        System.out.println(i);
-//        System.out.println(i2);
 
         System.out.println("Kérem adja meg milyen műveletet szeretne elvégezni (összeadás, kivonás," +
                 "szorzás, osztás)");
@@ -49,7 +48,12 @@ public class Calculator {
                 System.out.println(i * i2);
                 break;
             case "osztás":
-                System.out.println(i / i2);
+                try {
+                    System.out.println(i / i2);
+                }
+                catch (ArithmeticException ae){
+                    System.out.println("Nullával nem lehet osztani");
+                }
                 break;
             default:
                 System.out.println("Rosszul adta meg a műveletet.");
