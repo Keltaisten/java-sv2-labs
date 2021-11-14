@@ -11,8 +11,16 @@ public class MeetingRoom {
         this.width = width;
     }
 
-    public void getArea(){
+    public int getArea(){
+        return length * width;
+    }
 
+    @Override
+    public String toString() {
+        return "MeetingRoom " +
+                "name:" + name +
+                ", length:" + length +
+                ", width:" + width;
     }
 
     public String getName() {

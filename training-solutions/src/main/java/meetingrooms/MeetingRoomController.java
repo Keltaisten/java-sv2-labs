@@ -6,7 +6,6 @@ public class MeetingRoomController {
 
     private Office office;
 
-
     public static void main(String[] args) {
         MeetingRoomController meetingRoomController = new MeetingRoomController();
         meetingRoomController.runMenu();
@@ -21,7 +20,7 @@ public class MeetingRoomController {
         office = new Office();
         int i;
         do {
-            System.out.println("1. Tárgyaló rögzítése\n" +
+            System.out.println("\n1. Tárgyaló rögzítése\n" +
                     "2. Tárgyalók sorrendben\n" +
                     "3. Tárgyalók visszafele sorrendben\n" +
                     "4. Minden második tárgyaló\n" +
@@ -61,6 +60,7 @@ public class MeetingRoomController {
                 case 8:
                     System.out.println("Adjon meg egy számot");
                     int area = scanner.nextInt();
+                    scanner.nextLine();
                     office.printAreasLargerThan(area);
                     break;
                 case 9:
