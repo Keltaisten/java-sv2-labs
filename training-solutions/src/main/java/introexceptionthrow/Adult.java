@@ -12,7 +12,6 @@ public class Adult {
         return age;
     }
 
-
     public Adult(String name, int age) {
         this.name = name;
         this.age = age;
@@ -20,6 +19,7 @@ public class Adult {
             throw new IllegalArgumentException(name + " younger than 18 year");
         }
     }
+
     @Override
     public String toString() {
         return name + " is adult";
