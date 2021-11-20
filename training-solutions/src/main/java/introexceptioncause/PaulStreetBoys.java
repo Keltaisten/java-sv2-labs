@@ -3,7 +3,6 @@ package introexceptioncause;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PaulStreetBoys {
@@ -14,12 +13,8 @@ public class PaulStreetBoys {
     }
 
     private List<String> toLowerNemecsek(List<String> nameList) {
-        for(String s: nameList){
-            if(s.equals("Nemecsek Ernő")){
-                s = s.toLowerCase();
-            }
-        }
-        nameList.set(nameList.indexOf("Nemecsek Ernő"),nameList.get(nameList.indexOf("Nemecsek Ernő")).toLowerCase());
+        int number = nameList.indexOf("Nemecsek Ernő");
+        nameList.set(number,nameList.get(number).toLowerCase());
         return nameList;
     }
 
