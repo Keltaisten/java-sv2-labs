@@ -24,6 +24,5 @@ public class PaulStreetBoys {
         }catch (IOException ioe){
             throw new IllegalStateException("Not found", ioe);
         }
-
     }
 }
