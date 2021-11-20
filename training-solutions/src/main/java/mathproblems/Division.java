@@ -7,6 +7,7 @@ public class Division {
     public void getDivisors(int number){
         List<String> divisors = new ArrayList<>();
         int steps = 1;
+        int howManyCycle = 0;
         divisors.add(0,(""));
         for(int i = 1; i <= number/i; i++){
             if(number%i == 0){
@@ -16,11 +17,18 @@ public class Division {
                     steps++;
                 }
             }
+            howManyCycle++;
         }
+        printElements(divisors);
+        System.out.println(howManyCycle);
+    }
+
+    public void printElements(List<String> divisors){
         for(String elements:divisors){
             System.out.println(elements);
         }
     }
+
 
     public static void main(String[] args) {
         Division division = new Division();
