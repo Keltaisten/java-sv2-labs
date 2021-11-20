@@ -20,7 +20,7 @@ public class PaulStreetBoys {
 
     private List<String> readTheNames() {
         try {
-            return Files.readAllLines(Paths.get("palutcaifiuk.txt"));
+            return Files.readAllLines(Paths.get("src/main/resources/palutcaifiuk.txt"));
         }catch (IOException ioe){
             throw new IllegalStateException("Not found", ioe);
         }
