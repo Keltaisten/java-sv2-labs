@@ -1,0 +1,4 @@
+Person name='Niki', dateOfBirth=1995
+Person name='Zoé', dateOfBirth=2020
+Person name='Csilla', dateOfBirth=1995
+Person name='Géza', dateOfBirth=1991
