@@ -9,9 +9,8 @@ class NumbersTest {
     void testGetSum() {
         Numbers numbers = new Numbers();
 
-        assertEquals(10, numbers.getSum(new int[]{1, 2, 3, 4}));
-        assertEquals(2, numbers.getSum(new int[]{2}));
+        assertEquals(26, numbers.getSum(new int[]{5, 6, 7, 8}));
+        assertEquals(5, numbers.getSum(new int[]{5}));
         assertEquals(0, numbers.getSum(new int[]{}));
     }
-
 }
