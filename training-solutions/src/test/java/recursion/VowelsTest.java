@@ -9,8 +9,9 @@ class VowelsTest {
     @Test
     void getNumberOfVowels() {
         Vowels vowels = new Vowels();
-        System.out.println(vowels.getNumberOfVowels("almaa"));
+        System.out.println(vowels.getNumberOfVowels("alma"));
+        System.out.println(vowels.getNumberOfVowels("álmoskönyv"));
         System.out.println(vowels.getNumberOfVowels("sd"));
-        System.out.println(vowels.getNumberOfVowels("éáűőúőöüóa"));
+        System.out.println(vowels.getNumberOfVowels("eéáűőúőöüó"));
     }
 }
