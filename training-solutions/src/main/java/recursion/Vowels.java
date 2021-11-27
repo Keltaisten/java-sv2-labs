@@ -1,18 +1,10 @@
 package recursion;
 
-import java.util.Arrays;
-
 public class Vowels {
     public int getNumberOfVowels(String word){
-//        List<String> okCharacters = Arrays.asList("a")
         String okCharacters = "aáeéiíoóöőuúüű";
-//        if(word.length() == 1){
-//            return
-//        }
 
-//            System.out.println(c);
-//            System.out.println(word.charAt(0));
-            if(isTheLetterInTheString(word)){
+            if(isTheLetterInTheStringRecursive(word, okCharacters)){
                 if(word.length() == 1){
                     return 1;
                 }
@@ -42,13 +34,19 @@ public class Vowels {
         }
 
     public boolean isTheLetterInTheStringRecursive(String word, String okCharacters){
+            boolean bool;
 
-        for(char c: okCharacters.toCharArray()){
-
-            if(c == word.charAt(0)){
+            if(okCharacters.charAt(0) == word.charAt(0)){
                 return true;
             }
+            else{
+                if(okCharacters.length() == 1){
+                    return false;
+                }
+                else{
+                    bool = isTheLetterInTheStringRecursive(word, okCharacters.substring(1));
+                }
+            }
+            return bool;
         }
-        return false;
-    }
     }
