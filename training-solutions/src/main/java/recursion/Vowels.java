@@ -21,18 +21,6 @@ public class Vowels {
             }
     }
 
-
-    public boolean isTheLetterInTheString(String word){
-        String okCharacters = "aáeéiíoóöőuúüű";
-        for(char c: okCharacters.toCharArray()){
-
-            if(c == word.charAt(0)){
-                return true;
-                }
-            }
-        return false;
-        }
-
     public boolean isTheLetterInTheStringRecursive(String word, String okCharacters){
             boolean bool;
 
