@@ -4,7 +4,7 @@ import java.util.Random;
 
 public abstract class Character {
     private static final int MAX_DAMAGE = 10;
-    private static final int MAX_DEFENCE = 10;
+    private static final int MAX_DEFENCE = 5;
     private Point position;
     private int hitPoint = 100;
     private Random random;
@@ -27,8 +27,8 @@ public abstract class Character {
     }
 
     protected void hit(Character enemy, int damage){
-        if(getActualDefence() < damage){
-            decreaseHitPoint(damage);
+        if(enemy.getActualDefence() < damage){
+            enemy.decreaseHitPoint(damage);
         }
     }
 

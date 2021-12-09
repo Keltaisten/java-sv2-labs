@@ -10,22 +10,13 @@ public class BattleField {
     private boolean oneHit(Character attacker, Character defender){
         if(attacker.isAlive() && defender.isAlive()){
             attacker.primaryAttack(defender);
-        }
-        if(attacker.isAlive() && defender.isAlive()){
             attacker.secondaryAttack(defender);
         }
-        if(attacker.isAlive() && defender.isAlive()){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return attacker.isAlive() && defender.isAlive();
     }
 
     public Character fight(Character one, Character other){
-        while (one.isAlive() && other.isAlive()){
-            oneHit(one,other);
-            oneHit(other,one);
+        while(oneHit(one, other) && oneHit(other, one)) {
             round++;
         }
         if(one.isAlive()){
