@@ -11,17 +11,12 @@ public class HeadQuarter {
     }
 
     public void moveClosestTrooper(Position target){
-//        Trooper minimumDistanceTrooper = stormTroopers.get(0);
-//        for(Trooper t: stormTroopers){
-//            if(t.distanceFrom(target) < minimumDistanceTrooper.distanceFrom(target)){
-//                minimumDistanceTrooper = t;
-//            }
-//        }
         if(target == null){
             throw new IllegalArgumentException("Target is null");
         }
         else{
-            findClosestTrooper(target).changePosition(target);
+//            findClosestTrooper(target).changePosition(target);
+            moveTrooper(findClosestTrooper(target), target);
         }
     }
 
@@ -42,19 +37,15 @@ public class HeadQuarter {
             throw new IllegalArgumentException("Target is null");
         }
         else{
-            findTrooperByName(name).changePosition(target);
+//            findTrooperByName(name).changePosition(target);
+            moveTrooper(findTrooperByName(name),target);
         }
-//        for(Trooper t: stormTroopers){
-//            if(t.getName() == name){
-//                t.changePosition(target);
-//            }
-//        }
     }
 
     private Trooper findTrooperByName(String name){
         Trooper trooper = null;
         for(Trooper t: stormTroopers){
-            if(t.getName() == name){
+            if(t.getName().equals(name)){
                 trooper = t;
             }
         }
