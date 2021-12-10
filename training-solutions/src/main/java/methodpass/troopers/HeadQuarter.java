@@ -15,7 +15,6 @@ public class HeadQuarter {
             throw new IllegalArgumentException("Target is null");
         }
         else{
-//            findClosestTrooper(target).changePosition(target);
             moveTrooper(findClosestTrooper(target), target);
         }
     }
@@ -37,8 +36,10 @@ public class HeadQuarter {
             throw new IllegalArgumentException("Target is null");
         }
         else{
-//            findTrooperByName(name).changePosition(target);
-            moveTrooper(findTrooperByName(name),target);
+            Trooper trooper = findTrooperByName(name);
+            if(trooper != null){
+                moveTrooper(trooper,target);
+            }
         }
     }
 
