@@ -12,6 +12,7 @@ public class BusTimeTable {
 
     public BusTimeTable(int firstHour, int lastHour, int everyMinute){
         for(int i = firstHour; i <= lastHour; i++){
+
             timeTable.add(new SimpleTime(i,everyMinute));
         }
     }
