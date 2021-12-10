@@ -1,6 +1,7 @@
 package introexceptionwritefiletestjunit5;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import recursion.Palindrome;
 
 import java.io.File;
@@ -14,14 +15,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ElectricityTest {
 
+    @TempDir
+    File temporaryFolder;
+
     @Test
-    void writeStreetsWithWrongPath() {
+    void writeStreetsWithWrongPath() throws IOException {
         Electricity electricity = new Electricity();
         electricity.createDateList();
-        Path wrongPath = Paths.get("nothingPath.txt");
-        IllegalStateException ise = assertThrows(IllegalStateException.class,
-                ()-> electricity.writeStreets(wrongPath));
-        assertEquals("File not found", ise.getMessage());
+        Path path = temporaryFolder.toPath().resolve("streets.txt");
+        electricity.writeStreets(path);
+        List<String> dateAndStreets = Files.readAllLines(path);
+        assertEquals("2021-12-10, Püspök Kertváros",dateAndStreets.get(2));
     }
 
     @Test
