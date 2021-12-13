@@ -1,8 +1,5 @@
 package interfacerules.commonproperties;
 
-import interfacerules.Equator;
-import interfacerules.IkeaFurniture;
-import interfacerules.ParkingPlace;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
