@@ -1,4 +1,4 @@
-package interfacerules;
+package interfacerules.commonproperties;
 
 public class IkeaFurniture implements Name, Length, Width{
     private String name;

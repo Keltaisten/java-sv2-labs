@@ -1,4 +1,4 @@
-package interfacerules;
+package interfacerules.commonproperties;
 
 public interface Length {
     double getLength();

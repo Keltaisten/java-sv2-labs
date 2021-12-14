@@ -1,4 +1,4 @@
-package interfacerules;
+package interfacerules.commonproperties;
 
 public class Equator implements Name, Length{
     private static final String NAME = "Equator";
