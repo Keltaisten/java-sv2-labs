@@ -1,6 +1,6 @@
 package interfacedependencyinversion.amount;
 
-public class BankAtm implements Payable{
+public class BankAtm implements Payable {
     @Override
     public int getPayableAmount(int amount) {
         return roundTothousand(amount);
