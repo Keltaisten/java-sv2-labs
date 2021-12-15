@@ -7,5 +7,4 @@ public interface Vaccine {
 
     void generateVaccinationList(List<Person> registrated);
 
-    
 }
