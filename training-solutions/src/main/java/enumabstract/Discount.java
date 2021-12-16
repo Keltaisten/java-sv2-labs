@@ -6,7 +6,8 @@ public enum Discount {
         public double getAmountToPay(int price, int pieces){
             return price * 0.8 * pieces;
         }
-    }, BLACK_FRIDAY_OFFER{
+    },
+    BLACK_FRIDAY_OFFER{
         @Override
         public double getAmountToPay(int price, int pieces){
             if(pieces == 1 || pieces == 2){
