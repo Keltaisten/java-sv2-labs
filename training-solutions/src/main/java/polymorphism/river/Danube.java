@@ -1,11 +1,10 @@
 package polymorphism.river;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Danube extends River{
-    private List<String> capitals = new ArrayList<>();
+    private List<String> capitals;
 
     public Danube(String name, int length, List<String> capitals) {
         super(name, length);
