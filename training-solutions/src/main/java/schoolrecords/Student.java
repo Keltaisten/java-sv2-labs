@@ -35,7 +35,6 @@ public class Student {
         for(Mark mark: marks){
             average += mark.getMarkType().getGrade();
         }
-//        return marks.size()!= 0 ? average / marks.size() : 0.0;
         double setTwoDecimals;
         if(!marks.isEmpty()){
             setTwoDecimals = ((double) Math.round((average / marks.size()) * 100)) / 100;
@@ -57,7 +56,6 @@ public class Student {
         }
         double setTwoDecimals;
         if(count != 0){
-//            setTwoDecimals = ((double) Math.round((average / count) * 100)) / 100;
             double num = average / count;
             setTwoDecimals = Double.parseDouble(String.format(Locale.US,"%.2f", num));
         }
