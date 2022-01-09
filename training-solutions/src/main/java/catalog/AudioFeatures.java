@@ -10,10 +10,17 @@ public class AudioFeatures implements Feature {
     private String title;
 
     public AudioFeatures(String title, int length, List<String> composer, List<String> performers) {
-        Validators.isBlank(title);
-        Validators.isEmpty(composer);
-        Validators.isEmpty(performers);
-        Validators.isLongEnough(length);
+        if(Validators.isBlank(title)){
+            throw new IllegalArgumentException("Empty title");
+        }
+        if(Validators.isEmpty(composer) || Validators.isEmpty(performers)){
+            throw new IllegalArgumentException("No members in the list");
+        }
+
+        if(Validators.isLongEnough(length)){
+            throw new IllegalArgumentException("The song length must be longer than 0");
+        }
+
         this.composer = composer;
         this.length = length;
         this.performers = performers;
@@ -21,9 +28,17 @@ public class AudioFeatures implements Feature {
     }
 
     public AudioFeatures(String title, int length, List<String> performers) {
-        Validators.isBlank(title);
-        Validators.isEmpty(performers);
-        Validators.isLongEnough(length);
+        if(Validators.isBlank(title)){
+            throw new IllegalArgumentException("Empty title");
+        }
+        if(Validators.isEmpty(performers)){
+            throw new IllegalArgumentException("No members in the list");
+        }
+
+        if(Validators.isLongEnough(length)){
+            throw new IllegalArgumentException("The song length must be longer than 0");
+        }
+
         this.length = length;
         this.performers = performers;
         this.title = title;

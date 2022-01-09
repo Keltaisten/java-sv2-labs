@@ -9,9 +9,17 @@ public class PrintedFeatures implements Feature {
     private String title;
 
     public PrintedFeatures(String title, int numberOfPages, List<String> authors) {
-        Validators.isEmpty(authors);
-        Validators.isLongEnough(numberOfPages);
-        Validators.isBlank(title);
+        if(Validators.isBlank(title)){
+            throw new IllegalArgumentException("Empty title");
+        }
+        if(Validators.isEmpty(authors)){
+            throw new IllegalArgumentException("No members in the list");
+        }
+
+        if(Validators.isLongEnough(numberOfPages)){
+            throw new IllegalArgumentException("The song length must be longer than 0");
+        }
+
         this.authors = authors;
         this.numberOfPages = numberOfPages;
         this.title = title;

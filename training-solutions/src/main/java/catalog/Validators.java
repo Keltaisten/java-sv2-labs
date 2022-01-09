@@ -4,26 +4,26 @@ import java.util.List;
 
 public class Validators {
     public static boolean isBlank(String word) {
-        if (word != null && word.length() != 0) {
-            return true;
+        if (word != null && word.trim().length() != 0) {
+            return false;
         } else {
-            throw new IllegalArgumentException("Empty title");
+            return true;
         }
     }
 
     public static boolean isEmpty(List<String> words) {
         if (words != null && !words.isEmpty()) {
-            return true;
+            return false;
         } else {
-            throw new IllegalArgumentException("No members in the list");
+            return true;
         }
     }
 
     public static boolean isLongEnough(int number) {
         if (number > 0) {
-            return true;
+            return false;
         } else {
-            throw new IllegalArgumentException("The song length must be longer than 0");
+            return true;
         }
     }
 }
