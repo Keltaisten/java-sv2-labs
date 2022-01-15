@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FoodStore {
-    List<Food> foods = new LinkedList<>();
+    private List<Food> foods = new LinkedList<>();
 
     public void addFood(Food food) {
         foods.add(food);
