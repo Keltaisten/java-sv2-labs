@@ -10,19 +10,6 @@ public class Exam {
     }
 
     public List<String> getNamesOfSucceededPeople(int places) {
-//        Map<String, Integer> temp = new TreeMap<>();
-//        for (ExamResult actual : examResults) {
-//            temp.put(actual.getName(), actual.getResult());
-//        }
-////        temp = Collections.reverse(temp);
-//        List<String> result = new ArrayList<>(temp.keySet());
-//        Collections.sort(temp);
-//        Collections.reverse(result);
-//        if (places <= examResults.size()) {
-//            result = new ArrayList<>(temp.keySet()).subList(0,places);
-//        }
-//        Collections.reverse(result);
-//        return result;
         List<ExamResult> temp = examResults;
         Collections.sort(temp);
         Collections.reverse(temp);
